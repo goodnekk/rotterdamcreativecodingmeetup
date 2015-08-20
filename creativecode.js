@@ -8,12 +8,7 @@ window.onload = function() {
 	var windowWidth = window.innerWidth-10;
 	var windowHeight = window.innerHeight-document.getElementById("topbar").clientHeight-10;
 	paper.view.viewSize = new paper.Size(windowWidth,windowHeight);
-	paper.view.onResize = function() {
-		windowWidth = window.innerWidth-10;
-		windowHeight = window.innerHeight-document.getElementById("topbar").clientHeight-10;
-		paper.view.viewSize = new paper.Size(windowWidth,windowHeight);
-	}
-
+	
 	var arrow = new paper.Path();
 	arrow.add(new paper.Point(-20,-20));
 	arrow.add(new paper.Point(0,0));
@@ -22,6 +17,8 @@ window.onload = function() {
 	arrow.strokeWidth = 2; 
 	arrow.strokeCap = 'round';
 	arrow.strokeColor = 'black';
+
+
 	//object for line
 	var Wormpie = function(){
 
@@ -96,5 +93,12 @@ window.onload = function() {
 
 	}
 
+	//on resize
+	paper.view.onResize = function() {
+		windowWidth = window.innerWidth-10;
+		windowHeight = window.innerHeight-document.getElementById("topbar").clientHeight-10;
+		paper.view.viewSize = new paper.Size(windowWidth,windowHeight);
+		arrow.position = new paper.Point(windowWidth/2,windowHeight-40);
+	}
 
 }
