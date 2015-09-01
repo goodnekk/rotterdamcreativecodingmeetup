@@ -7,7 +7,7 @@ window.onload = function() {
 	//get set render window size and add resize events
 	var windowWidth = window.innerWidth-10;
 	var windowHeight = window.innerHeight-document.getElementById("topbar").clientHeight-10;
-	paper.view.viewSize = new paper.Size(windowWidth,windowHeight);
+	//paper.view.viewSize = new paper.Size(windowWidth,windowHeight);
 	
 	var arrow = new paper.Path();
 	arrow.add(new paper.Point(-20,-20));
@@ -81,6 +81,7 @@ window.onload = function() {
 	}
 
 	//interaction funcitons
+	/*
 	canvas.onclick = function(){
 	
 	}
@@ -92,12 +93,12 @@ window.onload = function() {
 	canvas.onmouseout = function(){
 
 	}
-
+	*/
 	//on resize
 	paper.view.onResize = function() {
-		windowWidth = window.innerWidth-10;
-		windowHeight = window.innerHeight-document.getElementById("topbar").clientHeight-10;
-		paper.view.viewSize = new paper.Size(windowWidth,windowHeight);
+		//windowWidth = window.innerWidth-10;
+		//windowHeight = window.innerHeight-document.getElementById("topbar").clientHeight-10;
+		//paper.view.viewSize = new paper.Size(windowWidth,windowHeight);
 		arrow.position = new paper.Point(windowWidth/2,windowHeight-40);
 	}
 
