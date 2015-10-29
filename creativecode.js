@@ -3,18 +3,18 @@ window.onload = function() {
 	//setup canvas
 	var canvas = document.getElementById('myCanvas');
 	paper.setup(canvas);
-	
+
 	//get set render window size and add resize events
 	var windowWidth = window.innerWidth-10;
 	var windowHeight = window.innerHeight-document.getElementById("topbar").clientHeight-10;
 	//paper.view.viewSize = new paper.Size(windowWidth,windowHeight);
-	
+
 	var arrow = new paper.Path();
 	arrow.add(new paper.Point(-20,-20));
 	arrow.add(new paper.Point(0,0));
 	arrow.add(new paper.Point(20,-20));
 	arrow.position = new paper.Point(windowWidth/2,windowHeight-40);
-	arrow.strokeWidth = 2; 
+	arrow.strokeWidth = 2;
 	arrow.strokeCap = 'round';
 	arrow.strokeColor = 'black';
 
@@ -30,7 +30,7 @@ window.onload = function() {
 		//create path segments
 		var myPath = new paper.Path();
 		myPath.strokeColor = new paper.Color((Math.random()+1)/2, (Math.random()+0.2)/2, (Math.random()+0.1)/2);
-		myPath.strokeWidth = 3; 
+		myPath.strokeWidth = 3;
 		myPath.strokeCap = 'round';
 		myPath.add(position);
 		myPath.add(position);
@@ -55,8 +55,8 @@ window.onload = function() {
 			myPath.segments[0].point.y += direction.y;
 
 			for(var i=10; i>0; i--){
-				myPath.segments[i].point.x += (myPath.segments[i-1].point.x-myPath.segments[i].point.x)/7;	
-				myPath.segments[i].point.y += (myPath.segments[i-1].point.y-myPath.segments[i].point.y)/7;	
+				myPath.segments[i].point.x += (myPath.segments[i-1].point.x-myPath.segments[i].point.x)/7;
+				myPath.segments[i].point.y += (myPath.segments[i-1].point.y-myPath.segments[i].point.y)/7;
 			}
 		}
 
@@ -65,7 +65,7 @@ window.onload = function() {
 			update: update
 		});
 	}
-	
+
 
 	//create array of lines
 	var wormpies = [];
@@ -83,7 +83,7 @@ window.onload = function() {
 	//interaction funcitons
 	/*
 	canvas.onclick = function(){
-	
+
 	}
 
 	canvas.onmouseover = function(){
